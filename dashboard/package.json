@@ -1,7 +1,10 @@
 {
   "name": "dashboard",
   "version": "0.1.0",
+  "description": "AARRR Metrics for Techs",
+  "author": "Maeevick",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

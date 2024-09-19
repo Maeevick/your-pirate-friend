@@ -16,9 +16,20 @@ describe('AppController (e2e)', () => {
   });
 
   it('/ (GET)', () => {
+    return request(app.getHttpServer()).get('/').expect(200).expect('ok');
+  });
+
+  it('/hello (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/hello')
       .expect(200)
-      .expect('Hello World!');
+      .expect((res) => {
+        expect(res.body).toHaveProperty('hello');
+        expect(typeof res.body.hello).toBe('string');
+      });
+  });
+
+  afterAll(async () => {
+    await app.close();
   });
 });
