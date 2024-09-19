@@ -1,7 +1,9 @@
 {
-  "name": "sdk",
+  "name": "your_pirate_friend_sdk",
+  "description": "AARRR Metrics for Techs",
+  "author": "Maeevick",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "start": "vite",
