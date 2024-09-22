@@ -15,6 +15,13 @@
       "when": 1726951066076,
       "tag": "0001_user_repository",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1727039210389,
+      "tag": "0002_event_data",
+      "breakpoints": true
     }
   ]
 }
