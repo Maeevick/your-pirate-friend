@@ -41,4 +41,8 @@ export class UserRepository implements IUserRepository {
       .limit(1);
     return result[0] || null;
   }
+
+  async delete(userId: string): Promise<void> {
+    await this.db.delete(users).where(eq(users.id, userId));
+  }
 }

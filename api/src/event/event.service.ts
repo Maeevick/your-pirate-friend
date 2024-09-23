@@ -30,7 +30,10 @@ export class EventService {
     return project.id;
   }
 
-  async saveEvent(eventDto: EventDto, eventType: string): Promise<void> {
+  async saveEvent(
+    eventDto: EventDto,
+    eventType: string,
+  ): Promise<{ message: string }> {
     const projectId = await this.validateEvent(eventDto);
 
     await this.eventRepository.save({
@@ -40,5 +43,7 @@ export class EventService {
       name: eventDto.name,
       projectId,
     });
+
+    return { message: 'Event saved successfully' };
   }
 }

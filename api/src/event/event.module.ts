@@ -17,9 +17,9 @@ import { ProjectRepository } from '../project/project.repository';
   providers: [
     drizzleProvider,
     EventService,
-    EventRepository,
     UserRepository,
     ProjectRepository,
+    EventRepository,
   ],
 })
 export class EventModule {}

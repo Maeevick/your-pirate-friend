@@ -11,4 +11,5 @@ export interface IUserRepository {
   create(user: Omit<User, 'id' | 'token'>): Promise<User>;
   updateToken(userId: string, token: string | null): Promise<void>;
   findByToken(token: string): Promise<User | null>;
+  delete(userId: string): Promise<void>;
 }

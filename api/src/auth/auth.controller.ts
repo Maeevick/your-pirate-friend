@@ -24,7 +24,7 @@ export class AuthController {
     type: SignUpInResponseDto,
   })
   @ApiResponse({ status: 400, description: 'Bad request' })
-  async postSignUp(@Body() signUpDto: SignUpDto) {
+  async signUp(@Body() signUpDto: SignUpDto) {
     return this.authService.signUp(signUpDto);
   }
 
@@ -38,7 +38,7 @@ export class AuthController {
     type: SignUpInResponseDto,
   })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async postSignIn(@Body() signInDto: SignInDto) {
+  async signIn(@Body() signInDto: SignInDto) {
     return this.authService.signIn(signInDto);
   }
 
@@ -52,7 +52,7 @@ export class AuthController {
     type: SignOutResponseDto,
   })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async postSignOut(@Body() signOutDto: SignOutDto) {
+  async signOut(@Body() signOutDto: SignOutDto) {
     return this.authService.signOut(signOutDto);
   }
 }

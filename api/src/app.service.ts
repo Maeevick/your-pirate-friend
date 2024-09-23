@@ -14,13 +14,4 @@ export class AppService {
   getHealthCheck(): string {
     return 'ok';
   }
-  async getHello(): Promise<{ hello: string }> {
-    const [result] = await this.db.select().from(schema.health).limit(1);
-
-    if (!result) {
-      throw new Error('No health status found');
-    }
-
-    return { hello: result.status };
-  }
 }

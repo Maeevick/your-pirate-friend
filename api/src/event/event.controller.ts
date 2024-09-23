@@ -19,7 +19,7 @@ export class EventController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   async saveAwarenessEvent(@Body() eventDto: EventDto) {
-    await this.eventService.saveEvent(eventDto, EventType.AWARENESS);
+    return await this.eventService.saveEvent(eventDto, EventType.AWARENESS);
   }
 
   @Post('acquisition')
@@ -32,7 +32,7 @@ export class EventController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   async saveAcquisitionEvent(@Body() eventDto: EventDto) {
-    await this.eventService.saveEvent(eventDto, EventType.ACQUISITION);
+    return await this.eventService.saveEvent(eventDto, EventType.ACQUISITION);
   }
 
   @Post('activation')
@@ -45,7 +45,7 @@ export class EventController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   async saveActivationEvent(@Body() eventDto: EventDto) {
-    await this.eventService.saveEvent(eventDto, EventType.ACTIVATION);
+    return await this.eventService.saveEvent(eventDto, EventType.ACTIVATION);
   }
 
   @Post('retention')
@@ -58,7 +58,7 @@ export class EventController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   async saveRetentionEvent(@Body() eventDto: EventDto) {
-    await this.eventService.saveEvent(eventDto, EventType.RETENTION);
+    return await this.eventService.saveEvent(eventDto, EventType.RETENTION);
   }
 
   @Post('revenue')
@@ -71,7 +71,7 @@ export class EventController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   async saveRevenueEvent(@Body() eventDto: EventDto) {
-    await this.eventService.saveEvent(eventDto, EventType.REVENUE);
+    return await this.eventService.saveEvent(eventDto, EventType.REVENUE);
   }
 
   @Post('referral')
@@ -84,6 +84,6 @@ export class EventController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   async saveReferralEvent(@Body() eventDto: EventDto) {
-    await this.eventService.saveEvent(eventDto, EventType.REFERRAL);
+    return await this.eventService.saveEvent(eventDto, EventType.REFERRAL);
   }
 }
