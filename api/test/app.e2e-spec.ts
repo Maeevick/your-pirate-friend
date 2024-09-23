@@ -15,18 +15,8 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer()).get('/').expect(200).expect('ok');
-  });
-
-  it('/hello (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/hello')
-      .expect(200)
-      .expect((res) => {
-        expect(res.body).toHaveProperty('hello');
-        expect(typeof res.body.hello).toBe('string');
-      });
+  it('/health (GET)', () => {
+    return request(app.getHttpServer()).get('/health').expect(200).expect('ok');
   });
 
   afterAll(async () => {

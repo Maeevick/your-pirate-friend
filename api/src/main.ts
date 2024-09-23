@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import {
   FastifyAdapter,
   NestFastifyApplication,
@@ -21,6 +22,26 @@ async function bootstrap() {
       transform: true,
     }),
   );
+
+  const document = SwaggerModule.createDocument(
+    app,
+    new DocumentBuilder()
+      .setTitle('Your Pirate Friend API')
+      .setDescription('The API description for Your Pirate Friend')
+      .setVersion('1.0')
+      .addTag('health', 'Health Check endpoints')
+      .addTag('auth', 'Authentication endpoints')
+      .addTag('events', 'AARRR Events endpoints')
+      .build(),
+  );
+  SwaggerModule.setup('openapi', app, document, {
+    swaggerOptions: {
+      defaultModelsExpandDepth: -1,
+      docExpansion: 'list',
+      tags: ['health', 'auth', 'events'],
+    },
+  });
+
   await app.listen(port, '0.0.0.0', () => {
     console.info(`Application is running on: http://localhost:${port}`);
   });

@@ -17,16 +17,9 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
+  describe('health check', () => {
     it('should return "ok"', async () => {
       expect(appController.getHealthCheck()).toBe('ok');
-    });
-  });
-  describe('hello', () => {
-    it(`should return '{hello:"Pirate!"}'`, async () => {
-      expect(await appController.getHello()).toStrictEqual({
-        hello: 'Pirate!',
-      });
     });
   });
 });

@@ -75,7 +75,7 @@ export class AuthService {
 
     await this.userRepository.updateToken(user.id, token);
 
-    return { user, token };
+    return { user: this.createSafeUser(user), token };
   }
 
   async signOut(signOutDto: SignOutDto) {
