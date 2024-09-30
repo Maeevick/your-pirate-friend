@@ -51,7 +51,7 @@
     "@types/node": "^22.5.5",
     "@types/supertest": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.6.0",
+    "@typescript-eslint/parser": "^8.8.0",
     "drizzle-kit": "^0.24.2",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
